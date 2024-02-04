@@ -32,7 +32,7 @@ typedef struct {
 
 typedef struct {
     Ethernet_header header;
-    IPv4_header contents;
+    IPv4_packet contents;
 
 
 } Ethernet_packet
