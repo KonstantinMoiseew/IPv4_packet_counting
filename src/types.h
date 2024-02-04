@@ -16,13 +16,27 @@ typedef struct {
 } IPv4_header;
 
 typedef struct {
+    IPv4_header header;
+    byte contents[];
+} IPv4_packet;
+
+
+typedef struct {
     byte _placeholder_1[16];
     byte _placeholder_2[6];
     byte packet_type_high;
     byte packet_type_low;
 
-    IPv4_header contents;
+    
 } Ethernet_header;
+
+typedef struct {
+    Ethernet_header header;
+    IPv4_header contents;
+
+
+} Ethernet_packet
+
 
 typedef struct {
     byte _0; //0x5b
@@ -32,7 +46,11 @@ typedef struct {
     byte _4; //0x0d
     byte _5; //0x0a
              
-    Ethernet_header contents;
+    
 } Block_header;
 
+typedef struct {
+    Block_header header;
+    Ethernet_packet contents;
+} Block;
 #endif //TYPES_H_INCLUDED
