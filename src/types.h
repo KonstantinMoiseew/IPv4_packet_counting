@@ -11,8 +11,6 @@ typedef struct {
     byte _placeholder_1[12];
     IP_address sender;
     IP_address receiver;
-    //other bytes skipped
-    //byte contents[];
 } IPv4_header;
 
 typedef struct {
@@ -35,7 +33,7 @@ typedef struct {
     IPv4_packet contents;
 
 
-} Ethernet_packet
+} Ethernet_packet;
 
 
 typedef struct {
