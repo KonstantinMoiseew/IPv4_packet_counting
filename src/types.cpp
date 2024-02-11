@@ -7,5 +7,5 @@ bool operator==(IP_address const& ip_a, IP_address const& ip_b)
           return false;
        }
     }
-   returm true;
+   return true;
 } 

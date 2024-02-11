@@ -6,12 +6,12 @@
 
 std::unordered_map<Conv_ID, int> processFile(std::string filename)
  {
-    FILE* in = fopen(filenam.c_str(), "r");
+    FILE* in = fopen(filename.c_str(), "r");
     std::unordered_map<Conv_ID, int> result;
     Block* current;
     while(NULL != (current = readBlock(in))) {
-       if (hasNeededType(b)) {
-        Conv_ID id = extractConv_ID(b);
+       if (hasNeededType(current)) {
+        Conv_ID id = extractConv_ID(current);
         if (0 == result.count(id))
         {
             result.insert({id, 1});
@@ -23,7 +23,8 @@ std::unordered_map<Conv_ID, int> processFile(std::string filename)
      }
         freeBlock(current);
 
+    }
     fclose(in);
-       }
+    return result;
 
  }
