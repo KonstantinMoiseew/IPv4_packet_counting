@@ -8,6 +8,18 @@
 
 #include <climits>
 
+std::ostream& operator<<(std::ostream& out, IP_address const& rv)
+ {
+     for (int i=0; i<4; ++i) {
+         if (i !=0) {
+             out << "."; }
+         out << (int) rv.addr[i];
+         }
+         return out;
+}
+
+
+
 bool hasNeededType(Block* block) {
     Ethernet_header h = block->contents.header;
 

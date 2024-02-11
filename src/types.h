@@ -3,6 +3,9 @@
 
 typedef unsigned char byte;
 
+bool operator==(IP_address const& ip_a, IP_address const& ip_b);
+
+
 typedef struct {
     byte addr[4];
 } IP_address;
